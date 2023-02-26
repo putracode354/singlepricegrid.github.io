@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root {
+  --cyan-clr: hsl(179, 62%, 43%);
+  --yellow-clr: hsl(71, 73%, 54%);
+  --light-clr: hsl(204, 43%, 93%);
+  --grayish-clr: hsl(218, 22%, 67%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  background-color: var(--light-clr);
+}
+
+/* styling component */
+
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 1.5em 0;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "col-1 col-1"
+    "col-2 col-3"
+  ;
+
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 5fr 5fr;
+  max-width: 43%;
+}
+
+
+.container section {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container section:nth-child(1) {
+  padding-right: 3em;
+}
+
+.container section:last-child {
+  padding-right: 4em;
+}
+
+.container .col-1 h2 {
+  font-size: 1.6rem;
+  color: var(--cyan-clr);
+  font-weight: 700;
+}
+
+.container .col-1 .information-guarantee {
+  color: var(--yellow-clr);
+  font-weight: 700;
+
+}
+
+.container .col-1 .information-benefit {
+  color: var(--grayish-clr);
+  line-height: 1.5em;
+  margin-top: -1em;
+}
+
+.container .col-2 h3, .container .col-3 h3 {
+  font-size: 1.2rem;
+  color: var(--light-clr);
+}
+
+.container .col-2 .time-range {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-top: .2em;
+}
+
+.container .col-2 span {
+  font-size: 1rem;
+  vertical-align: middle;
+  font-weight: 400;
+  color: hsl(204, 17%, 88%);
+}
+
+.container .col-2 .information-benefit {
+  margin-bottom: 1.5em;
+}
+
+.container .col-2 .cta-signup {
+  padding: 1em;
+  border-radius: .5em;
+  background-color: var(--yellow-clr);
+  color: var(--light-clr);
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 2px 2px 5px rgba(109, 109, 109, .4);
+}
+
+.container .col-3 p {
+  color: var(--light-clr);
+  line-height: 1.5em;
+  margin-top: 1em;
+}
+
+.col-1 {
+  background-color: #fff;
+  grid-area: col-1;
+}
+
+
+.col-2 {
+  background-color: var(--cyan-clr);
+  color: #fff;
+  grid-area: col-2;
+}
+
+.col-3 {
+  background-color: hsl(178, 52%, 68%);
+  color: #fff;
+  grid-area: col-3;
+}
+
+/* foooter */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
+/* responsive layout */
+
+@media (max-width:375px) {
+  .container {
+    grid-template-areas:
+      "col-1"
+      "col-2"
+      "col-3";
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    max-width: 90%;
+  }
+
+  .container .col-1 .information-guarantee {
+    margin-top: 2em;
+  }
+
+  .container .col-1 .information-benefit {
+    margin-top: 1.5em;
+  }
+
+}
